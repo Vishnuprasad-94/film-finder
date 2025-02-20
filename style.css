@@ -1,44 +1,78 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     background-color: #7f0920;
     color: #0a0408;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    min-height: 100vh;
 }
 
 #appTitle {
-    text-align: center;
-    margin: 0px auto;
-    display: block;
+  
     font-family: 'Staatliches', sans-serif;
-    font-size: 80px;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+#genreForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    text-align: center;
+    font-size: 0.85rem;
 }
 
 #genreForm, #playBtn {
-    text-align: center;
-    margin: 0px auto;
-    display: block;
+   
     font-family: 'Fredoka One', sans-serif;
 }
 
+#playBtn {
+    margin-bottom: 3rem;
+}
+
 #movieInfo {
-    width:  65%;
-    margin:  32px auto;
-    display: flex;
     
+    
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+
+#movie {
+    display: flex;
+    width: 100%;
+   min-height: 25rem;
+   margin-bottom: 2.5rem;
+   justify-content: space-between;
    
 }
 
 
 
 #moviePoster, #movieText {
-    width:  50%;
-    height: 100%;
+    width: 20rem;
     
 }
 
 img#moviePoster {
-    width:  100%;
+    height: 100%;
     
-    display:  block;
-    margin:  auto;
+   
+    
 }
 
 #movieText {
@@ -49,13 +83,13 @@ img#moviePoster {
 }
 
 #movieTitle, #movieOverview, #movieRelease {
-    padding:  32px;
+    padding: 1rem;
 }
 
 
 #playBtn {
-    margin-top: 20px;
-    font-size: 25px;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
     padding: 7px 10px;
     border-radius: 10px;
     border-style: none;
@@ -66,23 +100,23 @@ img#moviePoster {
 
 label {
     display: block;
-    font-size: 35px;
+    font-size: 2rem;
     margin-bottom: 5px;
 }
 
 select {
-    width: 200px;
+    width: 12.5rem;
     height: auto;
 }
 
 #likeOrDislikeBtns {
-    text-align: center;
-    margin: 0px auto;  
+    
+     
 }
 
 #likeBtn, #dislikeBtn, #favBtn, #nahBtn {
     padding: 15px 25px;
-    font-size: 25px;
+    font-size: 1.25rem;
     border-radius: 12px;
     border-style: none;
     cursor:  pointer;
@@ -108,4 +142,13 @@ select {
     background-color: grey;
     color: black;
     float: right;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    #movie {
+        flex-direction: column;
+    }
+    
 }

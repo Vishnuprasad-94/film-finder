@@ -1,3 +1,4 @@
+
 // Populate dropdown menu with all the available genres
 const populateGenreDropdown = (genres) => {
     const select = document.getElementById('genres')
@@ -33,12 +34,8 @@ const showPreferBtns = () => {
 
 // Clear the current movie from the screen
 const clearCurrentMovie = () => {
-    
-    const moviePosterDiv = document.getElementById('moviePoster');
-    const movieTextDiv = document.getElementById('movieText');
-    
-    moviePosterDiv.innerHTML = '';
-    movieTextDiv.innerHTML = '';
+   const movieContainer = document.getElementById('movieInfo')
+    movieContainer.innerHTML = ''
     
 }
 
@@ -120,8 +117,13 @@ const getRandomMovie = (movies) => {
 
 // Uses the DOM to create HTML to display the movie
 const displayMovie = (movieInfo) => {
-    const moviePosterDiv = document.getElementById('moviePoster');
-    const movieTextDiv = document.getElementById('movieText');
+    const movieContainer = document.getElementById('movieInfo')
+    const movieDiv = document.createElement('movie');
+    movieDiv.setAttribute('id','movie');
+    const moviePosterDiv = document.createElement('moviePoster');
+    moviePosterDiv.setAttribute('id','moviePoster')
+    const movieTextDiv = document.createElement('movieText');
+    movieTextDiv.setAttribute('id','movieText')
     const likeBtn = document.getElementById('likeBtn');
     const dislikeBtn = document.getElementById('dislikeBtn');
   
@@ -137,6 +139,12 @@ const displayMovie = (movieInfo) => {
     movieTextDiv.appendChild(titleHeader);
     movieTextDiv.appendChild(releaseDate);
     movieTextDiv.appendChild(overviewText);
+
+
+    movieDiv.appendChild(moviePosterDiv)
+    movieDiv.appendChild(movieTextDiv)
+
+    movieContainer.appendChild(movieDiv)
   
     showBtns();
     likeBtn.onclick = () => likeMovie(movieInfo);
